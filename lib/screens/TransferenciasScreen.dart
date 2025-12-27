@@ -14,8 +14,8 @@ class _TransferenciasScreenState extends State<TransferenciasScreen> {
   final TextEditingController montoController = TextEditingController();
 
   final DatabaseReference ref = FirebaseDatabase.instance.ref("transferencias");
-
   final Color colorPrincipal = const Color.fromARGB(255, 69, 156, 19);
+  bool cargando = false;
 
   @override
   Widget build(BuildContext context) {
@@ -23,16 +23,16 @@ class _TransferenciasScreenState extends State<TransferenciasScreen> {
       appBar: AppBar(
         title: const Text("Transferencias"),
         backgroundColor: colorPrincipal,
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            
             TextField(
               controller: idController,
               decoration: const InputDecoration(
-                labelText: "ID de transferencddia",
+                labelText: "ID de transferencia",
                 border: OutlineInputBorder(),
               ),
             ),
@@ -53,7 +53,7 @@ class _TransferenciasScreenState extends State<TransferenciasScreen> {
                 border: OutlineInputBorder(),
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -61,67 +61,13 @@ class _TransferenciasScreenState extends State<TransferenciasScreen> {
                   backgroundColor: colorPrincipal,
                   padding: const EdgeInsets.symmetric(vertical: 16),
                 ),
-                onPressed: guardarTransferencia,
-                child: const Text(
-                  "Guardar Transferencia",
-                  style: TextStyle(fontSize: 16),
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              "Transferencias registradas",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-            ),
-            const SizedBox(height: 10),
-            // LISTVIEW
-            Expanded(
-              child: StreamBuilder(
-                stream: ref.onValue,
-                builder: (context, snapshot) {
-                  if (!snapshot.hasData) {
-                    return const Center(child: CircularProgressIndicator());
-                  }
-
-                  final data = snapshot.data!.snapshot.value;
-                  if (data == null) return const Center(child: Text("No hay transferencias"));
-
-                  // Convertir a lista
-                  final Map<dynamic, dynamic> map = data as Map<dynamic, dynamic>;
-                  final items = map.entries.toList();
-
-                  return ListView.builder(
-                    itemCount: items.length,
-                    itemBuilder: (context, index) {
-                      final key = items[index].key;
-                      final value = items[index].value as Map<dynamic, dynamic>;
-
-                      return Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        margin: const EdgeInsets.symmetric(vertical: 5),
-                        elevation: 3,
-                        child: ListTile(
-                          leading: Image.network(
-                            value['imagen'] ?? "https://via.placeholder.com/50",
-                            width: 50,
-                            height: 50,
-                          ),
-                          title: Text("Monto: \$${value['monto']}"),
-                          subtitle: Text("Banco: ${value['banco'] ?? 'Desconocido'}"),
-                          onTap: () {
-                            mostrarAlerta(
-                              context,
-                              "Detalles de la transferencia",
-                              "ID: ${value['id']}\nDestinatario: ${value['nombre']}\nMonto: \$${value['monto']}\nBanco: ${value['banco'] ?? 'Desconocido'}",
-                            );
-                          },
-                        ),
-                      );
-                    },
-                  );
-                },
+                onPressed: cargando ? null : guardarTransferencia,
+                child: cargando
+                    ? const CircularProgressIndicator(color: Colors.white)
+                    : const Text(
+                        "Guardar Transferencia",
+                        style: TextStyle(fontSize: 16),
+                      ),
               ),
             ),
           ],
@@ -130,7 +76,7 @@ class _TransferenciasScreenState extends State<TransferenciasScreen> {
     );
   }
 
-  void guardarTransferencia() {
+  void guardarTransferencia() async {
     final id = idController.text.trim();
     final nombre = nombreController.text.trim();
     final monto = montoController.text.trim();
@@ -140,18 +86,26 @@ class _TransferenciasScreenState extends State<TransferenciasScreen> {
       return;
     }
 
-    final nuevaRef = ref.push();
-    nuevaRef.set({
-      "id": id,
-      "nombre": nombre,
-      "monto": monto,
-      "banco": "Banco Ejemplo",
-      "imagen": "https://via.placeholder.com/50",
-    });
+    setState(() => cargando = true);
 
-    idController.clear();
-    nombreController.clear();
-    montoController.clear();
+    try {
+      final nuevaRef = ref.push();
+      await nuevaRef.set({
+        "id transferencia": id,
+        "nombre destinatario": nombre,
+        "monto a transferir": monto,
+      });
+
+      idController.clear();
+      nombreController.clear();
+      montoController.clear();
+
+      mostrarAlerta(context, "Éxito", "Transferencia guardada correctamente");
+    } catch (e) {
+      mostrarAlerta(context, "Error", "No se pudo guardar la transferencia");
+    } finally {
+      setState(() => cargando = false);
+    }
   }
 
   void mostrarAlerta(BuildContext context, String titulo, String mensaje) {
