@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "802320830862",
+    "firebase_url": "https://evaluacion-fire-d9ab9-default-rtdb.firebaseio.com",
+    "project_id": "evaluacion-fire-d9ab9",
+    "storage_bucket": "evaluacion-fire-d9ab9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802320830862:android:a4506c349631e3ba2b94df",
+        "android_client_info": {
+          "package_name": "com.example.evaluacion_fire"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBArzbalc1zkkTYkeMrtFhyUMjHScJ-3BU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

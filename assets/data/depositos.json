@@ -1,0 +1,232 @@
+[
+  {
+    "id": "transferencia1",
+    "banco": "Banco del Pacífico",
+    "monto": 2500.50,
+    "fecha": "2024-12-01",
+    "origen": {
+      "nombre": "Juan Pérez",
+      "tipo_cuenta": "Cuenta corriente",
+      "número_cuenta": "1234567890",
+      "banco_origen": "Banco del Pacífico"
+    },
+    "destino": {
+      "nombre": "María López",
+      "tipo_cuenta": "Cuenta de ahorros",
+      "número_cuenta": "0987654321",
+      "banco_destino": "Banco del Pacífico"
+    },
+    "detalles": {
+      "imagen_comprobante": "https://raw.githubusercontent.com/jritsqmet/web-api/refs/heads/main/assets/images/api-bancos/pacifico.png",
+      "método_pago": "Transferencia electrónica",
+      "estado": "Confirmada"
+    }
+  },
+  {
+    "id": "transferencia2",
+    "banco": "Banco Pichincha",
+    "monto": 450.75,
+    "fecha": "2024-12-02",
+    "origen": {
+      "nombre": "Carlos García",
+      "tipo_cuenta": "Cuenta de ahorros",
+      "número_cuenta": "5647382910",
+      "banco_origen": "Banco Pichincha"
+    },
+    "destino": {
+      "nombre": "Ana Vásquez",
+      "tipo_cuenta": "Cuenta corriente",
+      "número_cuenta": "1029384756",
+      "banco_destino": "Banco Pichincha"
+    },
+    "detalles": {
+      "imagen_comprobante": "https://raw.githubusercontent.com/jritsqmet/web-api/refs/heads/main/assets/images/api-bancos/pichincha.jpg",
+      "método_pago": "Transferencia interbancaria",
+      "estado": "Pendiente"
+    }
+  },
+  {
+    "id": "transferencia3",
+    "banco": "Banco de Guayaquil",
+    "monto": 3200.00,
+    "fecha": "2024-12-03",
+    "origen": {
+      "nombre": "Luis Martínez",
+      "tipo_cuenta": "Cuenta corriente",
+      "número_cuenta": "9876543210",
+      "banco_origen": "Banco de Guayaquil"
+    },
+    "destino": {
+      "nombre": "Laura Cruz",
+      "tipo_cuenta": "Cuenta de ahorros",
+      "número_cuenta": "1928374650",
+      "banco_destino": "Banco de Guayaquil"
+    },
+    "detalles": {
+      "imagen_comprobante": "https://raw.githubusercontent.com/jritsqmet/web-api/refs/heads/main/assets/images/api-bancos/guayaquil.png",
+      "método_pago": "Transferencia en línea",
+      "estado": "Confirmada"
+    }
+  },
+  {
+    "id": "transferencia4",
+    "banco": "Produbanco",
+    "monto": 1800.25,
+    "fecha": "2024-12-04",
+    "origen": {
+      "nombre": "Esteban Rodríguez",
+      "tipo_cuenta": "Cuenta corriente",
+      "número_cuenta": "5678123456",
+      "banco_origen": "Produbanco"
+    },
+    "destino": {
+      "nombre": "Pablo Herrera",
+      "tipo_cuenta": "Cuenta de ahorros",
+      "número_cuenta": "6543219870",
+      "banco_destino": "Produbanco"
+    },
+    "detalles": {
+      "imagen_comprobante": "https://raw.githubusercontent.com/jritsqmet/web-api/refs/heads/main/assets/images/api-bancos/produbanco.png",
+      "método_pago": "Transferencia física",
+      "estado": "Confirmada"
+    }
+  },
+  {
+    "id": "transferencia5",
+    "banco": "Banco Internacional",
+    "monto": 550.00,
+    "fecha": "2024-12-05",
+    "origen": {
+      "nombre": "Sofía Ríos",
+      "tipo_cuenta": "Cuenta de ahorros",
+      "número_cuenta": "2345678901",
+      "banco_origen": "Banco Internacional"
+    },
+    "destino": {
+      "nombre": "Roberto Díaz",
+      "tipo_cuenta": "Cuenta corriente",
+      "número_cuenta": "1987654321",
+      "banco_destino": "Banco Internacional"
+    },
+    "detalles": {
+      "imagen_comprobante": "https://raw.githubusercontent.com/jritsqmet/web-api/refs/heads/main/assets/images/api-bancos/internacional.png",
+      "método_pago": "Transferencia bancaria internacional",
+      "estado": "Pendiente"
+    }
+  },
+  {
+    "id": "transferencia6",
+    "banco": "Banco del Pacífico",
+    "monto": 7200.30,
+    "fecha": "2024-12-06",
+    "origen": {
+      "nombre": "Francisco Gómez",
+      "tipo_cuenta": "Cuenta corriente",
+      "número_cuenta": "3456789012",
+      "banco_origen": "Banco del Pacífico"
+    },
+    "destino": {
+      "nombre": "Carmen Soto",
+      "tipo_cuenta": "Cuenta de ahorros",
+      "número_cuenta": "2109876543",
+      "banco_destino": "Banco del Pacífico"
+    },
+    "detalles": {
+      "imagen_comprobante": "https://raw.githubusercontent.com/jritsqmet/web-api/refs/heads/main/assets/images/api-bancos/pacifico.png",
+      "método_pago": "Transferencia bancaria nacional",
+      "estado": "Confirmada"
+    }
+  },
+  {
+    "id": "transferencia7",
+    "banco": "Banco Pichincha",
+    "monto": 1280.15,
+    "fecha": "2024-12-07",
+    "origen": {
+      "nombre": "Verónica Sánchez",
+      "tipo_cuenta": "Cuenta de ahorros",
+      "número_cuenta": "8765432109",
+      "banco_origen": "Banco Pichincha"
+    },
+    "destino": {
+      "nombre": "Andrés Delgado",
+      "tipo_cuenta": "Cuenta corriente",
+      "número_cuenta": "5432109876",
+      "banco_destino": "Banco Pichincha"
+    },
+    "detalles": {
+      "imagen_comprobante": "https://raw.githubusercontent.com/jritsqmet/web-api/refs/heads/main/assets/images/api-bancos/pichincha.jpg",
+      "método_pago": "Pago en efectivo",
+      "estado": "Confirmada"
+    }
+  },
+  {
+    "id": "transferencia8",
+    "banco": "Banco de Guayaquil",
+    "monto": 1600.00,
+    "fecha": "2024-12-08",
+    "origen": {
+      "nombre": "Ricardo Martínez",
+      "tipo_cuenta": "Cuenta corriente",
+      "número_cuenta": "3450987612",
+      "banco_origen": "Banco de Guayaquil"
+    },
+    "destino": {
+      "nombre": "Patricia Ruiz",
+      "tipo_cuenta": "Cuenta de ahorros",
+      "número_cuenta": "9081726345",
+      "banco_destino": "Banco de Guayaquil"
+    },
+    "detalles": {
+      "imagen_comprobante": "https://raw.githubusercontent.com/jritsqmet/web-api/refs/heads/main/assets/images/api-bancos/guayaquil.png",
+      "método_pago": "Transferencia inmediata",
+      "estado": "Confirmada"
+    }
+  },
+  {
+    "id": "transferencia9",
+    "banco": "Produbanco",
+    "monto": 450.90,
+    "fecha": "2024-12-09",
+    "origen": {
+      "nombre": "María Fernández",
+      "tipo_cuenta": "Cuenta de ahorros",
+      "número_cuenta": "9081726345",
+      "banco_origen": "Produbanco"
+    },
+    "destino": {
+      "nombre": "Javier Silva",
+      "tipo_cuenta": "Cuenta corriente",
+      "número_cuenta": "6574839201",
+      "banco_destino": "Produbanco"
+    },
+    "detalles": {
+      "imagen_comprobante": "https://raw.githubusercontent.com/jritsqmet/web-api/refs/heads/main/assets/images/api-bancos/produbanco.png",
+      "método_pago": "Transferencia en ventanilla",
+      "estado": "Pendiente"
+    }
+  },
+  {
+    "id": "transferencia10",
+    "banco": "Banco Internacional",
+    "monto": 1050.00,
+    "fecha": "2024-12-10",
+    "origen": {
+      "nombre": "Diego Hernández",
+      "tipo_cuenta": "Cuenta corriente",
+      "número_cuenta": "7548639201",
+      "banco_origen": "Banco Internacional"
+    },
+    "destino": {
+      "nombre": "Monica Gómez",
+      "tipo_cuenta": "Cuenta de ahorros",
+      "número_cuenta": "1758364920",
+      "banco_destino": "Banco Internacional"
+    },
+    "detalles": {
+      "imagen_comprobante": "https://raw.githubusercontent.com/jritsqmet/web-api/refs/heads/main/assets/images/api-bancos/internacional.png",
+      "método_pago": "Transferencia automática",
+      "estado": "Confirmada"
+    }
+  }
+]
